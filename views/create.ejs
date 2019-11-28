@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Employee</title>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/show">Show Book List</a></h3>
+      <h1>Create New Book List</h1>
+      <form action="/addbook" method="post">
+        <table>
+          <tbody>
+            <tr>
+              <td>BookTitle</td>
+              <td><input type="text" name="name" /></td>
+            </tr>
+            <tr>
+              <td>ISBN</td>
+              <td><input type="text" name="ISBN" /></td>
+            </tr>
+            <tr>
+              <td>Author</td>
+              <td><input type="text" name="Author" /></td>
+            </tr>
+            <tr>
+              <td>createdBy</td>
+              <td><input type="text" name="createdBy" value =<%= user.facebook.email %> /></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="submit" value="Save" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
