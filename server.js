@@ -16,8 +16,6 @@ var session      = require('express-session');
 
 var configDB = require('./config/database.js');
 mongoose.Promise = global.Promise;
-// configuration ===============================================================
-//mongoose.connect(configDB.url,{ useNewUrlParser: true , useUnifiedTopology: true }); // connect to our database
 
 mongoose.connect(configDB.url,{ useMongoClient: true });
 
