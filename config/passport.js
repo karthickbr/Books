@@ -12,9 +12,9 @@ var configAuth = require('./auth'); // use this one for testing
 
 module.exports = function(passport) {
 
-    // =========================================================================
-    // passport session setup ==================================================
-    // =========================================================================
+    
+    // passport session setup 
+    
     // required for persistent login sessions
     // passport needs ability to serialize and unserialize users out of session
 
@@ -30,9 +30,9 @@ module.exports = function(passport) {
         });
     });
 
-    // =========================================================================
-    // LOCAL LOGIN =============================================================
-    // =========================================================================
+    
+    // LOCAL LOGIN 
+    
     passport.use('local-login', new LocalStrategy({
         // by default, local strategy uses username and password, we will override with email
         usernameField : 'email',
@@ -65,9 +65,9 @@ module.exports = function(passport) {
 
     }));
 
-    // =========================================================================
-    // LOCAL SIGNUP ============================================================
-    // =========================================================================
+   
+    // LOCAL SIGNUP 
+    
     passport.use('local-signup', new LocalStrategy({
         // by default, local strategy uses username and password, we will override with email
         usernameField : 'email',
@@ -139,9 +139,7 @@ module.exports = function(passport) {
 
     }));
 
-    // =========================================================================
-    // FACEBOOK ================================================================
-    // =========================================================================
+    // facebook
     var fbStrategy = configAuth.facebookAuth;
     fbStrategy.passReqToCallback = true;  // allows us to pass in the req from our route (lets us check if a user is logged in or not)
     passport.use(new FacebookStrategy(fbStrategy,
